@@ -1,0 +1,12 @@
+
+.body{
+    background: var(--lightgrey);
+}
+
+:root{
+    --lightgrey: lightgrey;
+
+}
+
+
+
