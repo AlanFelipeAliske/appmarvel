@@ -1,12 +1,162 @@
-
-.body{
-    background: var(--lightgrey);
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
 }
 
-:root{
+:root {
     --lightgrey: lightgrey;
+    --red: #d42026;
+    --redopacity: #d4202610;
+}
 
+/* 
+body{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+margin: 0px !important;
+}
+ */
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
 }
 
 
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    padding: 20px 20px;
+}
+
+table tr th {
+    text-align: start;
+    color: white;
+    background-color: var(--red);
+    padding: 10px 20px;
+}
+
+table tr {
+    border-bottom: 2px solid var(--redopacity);
+}
+
+table tr:hover {
+    background: var(--redopacity);
+}
+
+/* 
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+ */
+
+
+td img {
+    border-radius: 58px;
+
+}
+
+.card-img {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.card-img div p {
+    margin-left: 25px;
+}
+
+.name-header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--red);
+}
+
+.name-header h1 {
+    margin-bottom: 0px;
+}
+
+.series {
+    width: 25%;
+    border-left: solid 10px white;
+    border-right: solid 10px white;
+}
+
+.character {
+    width: 25%;
+}
+
+nav {
+    margin-bottom: 34px;
+}
+
+.mark {
+    height: 5px;
+    width: 54px;
+    background-color: var(--red);
+    margin-bottom: 34px;
+}
+
+.form-label {
+    color: var(--red);
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #a5a5a5;
+    width: 400px;
+    height: 31px;
+    font-size: 16px;
+}
+
+.pagination {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background: var(--red);
+    height: 12px;
+}
+
+.left, .right {
+    border: none !important;
+} 
+
+.pagination_section a {
+    color: black;
+    padding: 10px 15px;
+    border: solid 1px red;
+    text-decoration: none;
+    border-radius: 35px;
+}
+
+.pagination_section a:hover:not(.active) {
+    background-color: var(--red);
+    color: white;
+}
+
+a:nth-child() {
+    background-color: var(--red) ;
+    color: white;
+}
+
+.page-1{
+    margin-left: 0px;
+}
+.page-2{
+    margin: 0px 20px;
+}
+.page-3{
+    margin-right: 0px;
+}

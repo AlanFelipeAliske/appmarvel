@@ -1,0 +1,21 @@
+<div class="content">
+  <table>
+    <tr>
+      <th class="character">Personagem</th>
+      <th class="series">Séries</th>
+      <th class="events">Eventos</th>
+    </tr>
+    <tr *ngFor="let character of allCharacters | async">
+      <td class="card-img">
+        <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+        <div>
+          <p>{{ character.name }}</p>
+        </div>
+      </td>
+      
+      <td>{{character.series.items.slice(0,3)}}</td>
+      
+      <td>{{character.events.items.slice(0,3)}}</td>
+    </tr>
+  </table>  
+</div>

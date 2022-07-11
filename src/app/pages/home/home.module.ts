@@ -8,6 +8,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { CharacterComponent } from 'src/app/shared/components/character/character.component';
+import { CharactersComponent } from 'src/app/shared/components/characters/characters.component';
+import { FilterComponent } from 'src/app/shared/components/filter/filter.component';
+import { PaginationComponent } from 'src/app/shared/components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CharacterComponent } from 'src/app/shared/components/character/characte
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    CharacterComponent
+    CharacterComponent,
+    CharactersComponent,
+    FilterComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

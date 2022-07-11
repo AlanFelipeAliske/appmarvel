@@ -9,11 +9,10 @@ function requestApi(){
       redirect: 'follow'
     };
     
-    fetch("http://gateway.marvel.com/v1/public/comics?ts=1&apikey=cce4237dc02073fba69789cb4aed5be3&hash=66874614563d454ab9159e1f6192a972", requestOptions)
+    fetch("https://gateway.marvel.com/v1/public/characters?orderBy=name&ts=1&apikey=cce4237dc02073fba69789cb4aed5be3&hash=66874614563d454ab9159e1f6192a972", requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-    console.log(requestOptions);
 }
 
 
