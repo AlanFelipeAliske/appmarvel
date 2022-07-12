@@ -9,18 +9,15 @@ import { map } from 'rxjs/operators';
 
 export class CharactersService {
 
-  OFFSET = 10;
   LIMIT = 50;
 
   PUBLIC_KEY = 'cce4237dc02073fba69789cb4aed5be3';
 
   HASH = '66874614563d454ab9159e1f6192a972';
 
-  //URL_API = `https://gateway.marvel.com/v1/public/characters?orderBy=name&ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`;
-
   URL_API = `https://gateway.marvel.com/v1/public/characters?limit=${this.LIMIT}&ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`;
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAllCharacters(): Observable<any> {
     return this.http.get<any>(this.URL_API).pipe(map((data: any) => data.data.results));
@@ -28,12 +25,8 @@ constructor(private http: HttpClient) { }
 
   getFilterCharacters(filter: string, page: number): Observable<any> {
     const params = new HttpParams()
-    .set('nameStartsWith', filter)
-    .set('offset', page)
+      .set('nameStartsWith', filter)
+      .set('offset', page)
     return this.http.get<any>(this.URL_API, { params }).pipe(map((data: any) => data.data.results));
   }
-  
-
-
-
 }

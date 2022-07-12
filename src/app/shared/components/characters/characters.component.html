@@ -1,6 +1,5 @@
 <div class="content">
   <app-filter (onFilter)="filter($event)"></app-filter>
-
   <table id="table">
     <tr class="header">
       <th class="character">Personagem</th>
@@ -8,38 +7,38 @@
       <th class="series border">Séries</th>
       <th class="events">Eventos</th>
     </tr>
-    <tr *ngFor="let character of allCharacters | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index">
-      
+    <tr
+      *ngFor="let character of allCharacters | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index">
       <td class="card-img">
         <a href="{{character.urls[0].url}}" target="_blank">
-          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"
+            style="width: 58px; height: 58px;">
         </a>
         <div>
           <p>{{ character.name }}</p>
         </div>
       </td>
-
-       <td class="card-mobile">
+      <td class="card-mobile">
         <a href="{{character.urls[0].url}}">
-          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"
+            style="width: 58px; height: 58px;">
         </a>
         <div>
           <p>{{ character.name }}</p>
         </div>
       </td>
       <td class="series">
-        <div *ngFor="let serie of character.series?.items; let i=index"> <p *ngIf="i<3"> {{serie.name}} </p> </div>
+        <div *ngFor="let serie of character.series?.items; let i=index">
+          <p *ngIf="i<3"> {{serie.name}} </p>
+        </div>
       </td>
-
       <td class="events">
-        <div *ngFor="let event of character.events?.items; let i=index"> <p *ngIf="i<3"> {{event.name}} </p> </div>
+        <div *ngFor="let event of character.events?.items; let i=index">
+          <p *ngIf="i<3"> {{event.name}} </p>
+        </div>
       </td>
     </tr>
-  </table>  
-  <pagination-controls 
-                        [previousLabel]="labels.previousLabel "
-                        [nextLabel]="labels.nextLabel"
-                        (pageChange)="paginaAtual = $event" style="background: green;"></pagination-controls>
+  </table>
+  <pagination-controls [previousLabel]="labels.previousLabel " [nextLabel]="labels.nextLabel"
+    (pageChange)="paginaAtual = $event" style="background: green;"></pagination-controls>
 </div>
-
-
