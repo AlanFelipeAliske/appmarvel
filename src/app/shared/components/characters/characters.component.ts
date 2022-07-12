@@ -22,14 +22,14 @@ export class CharactersComponent implements OnInit {
     this.getCharacters();
   }
 
-  getCharacters(){  
-    this.charactersService.getAllCharacters().subscribe((res) => {this.allCharacters = res; console.log(res);});
+  getCharacters() {
+    this.charactersService.getAllCharacters().subscribe((res) => { this.allCharacters = res; });
   }
 
-  filter(filter: string){
-    if (filter){
+  filter(filter: string) {
+    if (filter) {
       this.paginaAtual = 1;
-      this.charactersService.getFilterCharacters(filter).subscribe((res) => {this.allCharacters = res; console.log(res);});
+      this.charactersService.getFilterCharacters(filter).subscribe((res) => { this.allCharacters = res; });
     } else {
       this.getCharacters();
     }
