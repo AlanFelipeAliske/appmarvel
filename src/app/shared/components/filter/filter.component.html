@@ -1,6 +1,8 @@
-<div class="content"> 
+<div class="content nav-filter"> 
   <label for="" class="form-label">Nome do Personagem</label>
   <div class="">
-      <input type="imput" class="form-control">
+      <input type="text" id="input" [(ngModel)]="textFilter" (keyup.enter)="myFilter()" class="form-control">
   </div>
 </div>
+
+

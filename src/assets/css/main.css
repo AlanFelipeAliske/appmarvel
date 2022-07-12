@@ -9,14 +9,11 @@
     --redopacity: #d4202610;
 }
 
-/* 
+
 body{
-    display: flex;
-flex-direction: row;
-justify-content: center;
-margin: 0px !important;
+    width: 100%;
 }
- */
+ 
 .content {
     margin-left: auto;
     margin-right: auto;
@@ -43,6 +40,10 @@ table tr th {
     padding: 10px 20px;
 }
 
+table tr td {
+    font-size: 15px;
+}
+
 table tr {
     border-bottom: 2px solid var(--redopacity);
 }
@@ -63,7 +64,7 @@ td img {
 
 }
 
-.card-img {
+.card-img, .card-mobile {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -74,7 +75,7 @@ td img {
 }
 
 .name-header {
-    margin-top: 20px;
+    margin: 20px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
     color: var(--red);
@@ -84,7 +85,7 @@ td img {
     margin-bottom: 0px;
 }
 
-.series {
+.border {
     width: 25%;
     border-left: solid 10px white;
     border-right: solid 10px white;
@@ -127,6 +128,7 @@ nav {
 footer {
     background: var(--red);
     height: 12px;
+    width: 100%;
 }
 
 .left, .right {
@@ -159,4 +161,82 @@ a:nth-child() {
 }
 .page-3{
     margin-right: 0px;
+}
+
+.character-mobile{
+    display: none;
+}
+.card-mobile{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1220px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 940px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 840px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 740px;
+    }
+    .character-mobile{
+        display: block;
+    }
+    .card-mobile{
+        display: flex;
+    }
+    .series{
+        display: none;
+    }
+    .events{
+        display: none;
+    }
+    .character{
+        display: none;
+    }
+    .card-img{
+        display: none;
+    }
+    .card-mobile img{
+        margin-right: 25px;
+    }
+    .name{
+        display: none;
+    }
+    td, th {
+        padding: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .name-header{
+        margin: 20px 0px 0px 20px;
+    } 
+    .nav-filter{
+        width: 100%;
+        margin: 0px 20px 0px 20px;
+    }
+    .form-control{
+        width: 95%;
+    }
 }

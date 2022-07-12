@@ -1,21 +1,41 @@
 <div class="content">
-  <table>
-    <tr>
+  <app-filter (onFilter)="filter($event)"></app-filter>
+
+  <table id="table">
+    <tr class="header">
       <th class="character">Personagem</th>
-      <th class="series">Séries</th>
+      <th class="character-mobile">Personagem</th>
+      <th class="series border">Séries</th>
       <th class="events">Eventos</th>
     </tr>
-    <tr *ngFor="let character of allCharacters | async">
+    <tr *ngFor="let character of allCharacters">
+      
       <td class="card-img">
-        <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+        <a href="{{character.urls[0].url}}" target="_blank">
+          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+        </a>
         <div>
           <p>{{ character.name }}</p>
         </div>
       </td>
-      
-      <td>{{character.series.items.slice(0,3)}}</td>
-      
-      <td>{{character.events.items.slice(0,3)}}</td>
+
+       <td class="card-mobile">
+        <a href="{{character.urls[0].url}}">
+          <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"  style="width: 58px; height: 58px;">
+        </a>
+        <div>
+          <p>{{ character.name }}</p>
+        </div>
+      </td>
+      <td class="series">
+        <div *ngFor="let serie of character.series?.items; let i=index"> <p *ngIf="i<3"> {{serie.name}} </p> </div>
+      </td>
+
+      <td class="events">
+        <div *ngFor="let event of character.events?.items; let i=index"> <p *ngIf="i<3"> {{event.name}} </p> </div>
+      </td>
     </tr>
   </table>  
 </div>
+
+

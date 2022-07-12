@@ -1,18 +1,21 @@
+/* 
+function myFilter() {
 
-function requestApi(){
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic Og==");
-    
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-      redirect: 'follow'
-    };
-    
-    fetch("https://gateway.marvel.com/v1/public/characters?orderBy=name&ts=1&apikey=cce4237dc02073fba69789cb4aed5be3&hash=66874614563d454ab9159e1f6192a972", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-}
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
 
-
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+} */

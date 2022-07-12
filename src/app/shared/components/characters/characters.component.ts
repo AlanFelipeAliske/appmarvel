@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/services/characters.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -9,18 +8,24 @@ import { Observable } from 'rxjs';
 export class CharactersComponent implements OnInit {
 
   constructor(private charactersService: CharactersService) { }
-  allCharacters: Observable<any> | undefined
-  characters: Observable<any> | undefined
+
+  allCharacters: any
+  characters: any
 
   ngOnInit() {
     this.getCharacters();
-    this.filterCharacters();
   }
 
-  getCharacters(){
-    this.allCharacters = this.charactersService.getAllCharacters();
+  getCharacters(){  
+    this.charactersService.getAllCharacters().subscribe((res) => {this.allCharacters = res; console.log(res);});
   }
-  filterCharacters(){
-    this.characters = this.charactersService.filterAllCharacters();
+
+  filter(filter: string){
+    if (filter){
+      this.charactersService.getFilterCharacters(filter, 0).subscribe((res) => {this.allCharacters = res; console.log(res);});
+    } else {
+      this.getCharacters();
+    }
   }
+
 }
