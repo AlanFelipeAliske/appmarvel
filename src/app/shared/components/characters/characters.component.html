@@ -8,7 +8,7 @@
       <th class="series border">Séries</th>
       <th class="events">Eventos</th>
     </tr>
-    <tr *ngFor="let character of allCharacters">
+    <tr *ngFor="let character of allCharacters | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index">
       
       <td class="card-img">
         <a href="{{character.urls[0].url}}" target="_blank">
@@ -36,6 +36,10 @@
       </td>
     </tr>
   </table>  
+  <pagination-controls 
+                        [previousLabel]="labels.previousLabel "
+                        [nextLabel]="labels.nextLabel"
+                        (pageChange)="paginaAtual = $event" style="background: green;"></pagination-controls>
 </div>
 
 

@@ -8,6 +8,12 @@ import { CharactersService } from 'src/app/core/services/characters.service';
 export class CharactersComponent implements OnInit {
 
   constructor(private charactersService: CharactersService) { }
+  
+  public paginaAtual = 1;
+  public labels: any = {
+    previousLabel: '⯇',
+    nextLabel: '⯈'
+  };
 
   allCharacters: any
   characters: any

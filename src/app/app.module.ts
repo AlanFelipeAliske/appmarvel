@@ -13,7 +13,6 @@ import { HeaderComponent } from './pages/main/header/header.component';
 import { MainComponent } from './pages/main/main.component';
 import { CharactersComponent } from './shared/components/characters/characters.component';
 import { FilterComponent } from './shared/components/filter/filter.component';
-import { PaginationComponent } from './shared/components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
     MainComponent,
     CharactersComponent,
     FilterComponent,
-    PaginationComponent,
     FooterComponent
   ],
   imports: [
@@ -32,6 +30,7 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       {
         path: '', component: MainComponent

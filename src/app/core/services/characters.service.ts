@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class CharactersService {
 
   OFFSET = 10;
-  LIMIT = 10;
+  LIMIT = 50;
 
   PUBLIC_KEY = 'cce4237dc02073fba69789cb4aed5be3';
 

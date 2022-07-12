@@ -1,6 +1,7 @@
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0px;
+    transition: 0.2s;
 }
 
 :root {
@@ -10,10 +11,10 @@
 }
 
 
-body{
+body {
     width: 100%;
 }
- 
+
 .content {
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +65,8 @@ td img {
 
 }
 
-.card-img, .card-mobile {
+.card-img,
+.card-mobile {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -95,7 +97,7 @@ td img {
     width: 25%;
 }
 
-nav {
+.nav-filter {
     margin-bottom: 34px;
 }
 
@@ -130,47 +132,118 @@ footer {
     height: 12px;
     width: 100%;
 }
-
-.left, .right {
+/* 
+.left,
+.right {
     border: none !important;
-} 
-
-.pagination_section a {
-    color: black;
-    padding: 10px 15px;
-    border: solid 1px red;
-    text-decoration: none;
-    border-radius: 35px;
 }
 
-.pagination_section a:hover:not(.active) {
+
+a:nth-child() {
     background-color: var(--red);
     color: white;
 }
-
-a:nth-child() {
-    background-color: var(--red) ;
-    color: white;
-}
-
-.page-1{
-    margin-left: 0px;
-}
-.page-2{
-    margin: 0px 20px;
-}
-.page-3{
-    margin-right: 0px;
-}
-
-.character-mobile{
-    display: none;
-}
-.card-mobile{
+ */
+.character-mobile {
     display: none;
 }
 
+.card-mobile {
+    display: none;
+}
 
+.ngx-pagination {
+    margin-top: 50px;
+    margin-bottom: 50px !important;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.ngx-pagination::before,
+.ngx-pagination::after {
+    content: "" !important;
+    display: table !important;
+}
+
+.ngx-pagination::after {
+    clear: both !important;
+}
+
+.ngx-pagination li {
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    display: block !important;
+    color: var(--red) !important;
+    border: 1px solid var(--red) !important;
+    padding: 10px 15px !important;
+    border-radius: 50px !important;
+    margin: 0px 10px;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: var(--red) !important;
+    color: white !important;
+}
+
+.ngx-pagination .current {
+    padding: 10px 15px !important;
+    background: var(--red) !important;
+    color: #fefefe !important;
+    cursor: default !important;
+    border: 1px solid var(--red) !important;
+    border-radius: 50px !important;
+    margin: 0px 10px;
+}
+.ngx-pagination .disabled {
+    color: var(--red) !important;
+    cursor: default !important;
+}
+
+.ngx-pagination .disabled:hover {
+    background: transparent;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    cursor: pointer !important;
+}
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
+    font-family: FontAwesome;
+    content: "" !important;
+    display: inline-block !important;
+    margin-right: 0rem !important;
+}
+
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+    font-family: FontAwesome !important;
+    content: "" !important;
+    display: inline-block !important;
+    margin-left: 0rem !important;
+}
+
+.ngx-pagination .show-for-sr {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+}
+
+.ngx-pagination .small-screen {
+    display: none !important;
+}
+.pagination-previous a, .pagination-next a {
+    border: none !important;
+}
 
 @media screen and (max-width: 1220px) {
     .content {
@@ -194,31 +267,41 @@ a:nth-child() {
         margin-right: auto;
         width: 740px;
     }
-    .character-mobile{
+
+    .character-mobile {
         display: block;
     }
-    .card-mobile{
+
+    .card-mobile {
         display: flex;
     }
-    .series{
+
+    .series {
         display: none;
     }
-    .events{
+
+    .events {
         display: none;
     }
-    .character{
+
+    .character {
         display: none;
     }
-    .card-img{
+
+    .card-img {
         display: none;
     }
-    .card-mobile img{
+
+    .card-mobile img {
         margin-right: 25px;
     }
-    .name{
+
+    .name {
         display: none;
     }
-    td, th {
+
+    td,
+    th {
         padding: 18px;
     }
 }
@@ -229,14 +312,21 @@ a:nth-child() {
         margin-right: auto;
         width: 100%;
     }
-    .name-header{
+
+    .name-header {
         margin: 20px 0px 0px 20px;
-    } 
-    .nav-filter{
-        width: 100%;
-        margin: 0px 20px 0px 20px;
     }
-    .form-control{
+
+    .nav-filter {
+        width: 94%;
+        margin: 0px 20px 12px 20px;
+    }
+
+    .form-control {
         width: 95%;
+    }
+
+    .mark {
+        margin-bottom: 12px;
     }
 }
