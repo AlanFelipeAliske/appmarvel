@@ -8,7 +8,7 @@ import { CharactersService } from 'src/app/core/services/characters.service';
 export class CharactersComponent implements OnInit {
 
   constructor(private charactersService: CharactersService) { }
-  
+  public maxSize = 5;
   public paginaAtual = 1;
   public labels: any = {
     previousLabel: '⯇',
@@ -28,10 +28,10 @@ export class CharactersComponent implements OnInit {
 
   filter(filter: string){
     if (filter){
-      this.charactersService.getFilterCharacters(filter, 0).subscribe((res) => {this.allCharacters = res; console.log(res);});
+      this.paginaAtual = 1;
+      this.charactersService.getFilterCharacters(filter).subscribe((res) => {this.allCharacters = res; console.log(res);});
     } else {
       this.getCharacters();
     }
   }
-
 }

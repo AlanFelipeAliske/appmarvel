@@ -39,6 +39,8 @@
       </td>
     </tr>
   </table>
-  <pagination-controls [previousLabel]="labels.previousLabel " [nextLabel]="labels.nextLabel"
+  <pagination-controls [maxSize]="maxSize"
+                      [previousLabel]="labels.previousLabel " 
+                      [nextLabel]="labels.nextLabel"
     (pageChange)="paginaAtual = $event" style="background: green;"></pagination-controls>
 </div>

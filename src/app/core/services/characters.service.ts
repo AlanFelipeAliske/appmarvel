@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 
 export class CharactersService {
 
-  LIMIT = 50;
+  LIMIT = 100;
 
   PUBLIC_KEY = 'cce4237dc02073fba69789cb4aed5be3';
 
@@ -23,10 +23,9 @@ export class CharactersService {
     return this.http.get<any>(this.URL_API).pipe(map((data: any) => data.data.results));
   }
 
-  getFilterCharacters(filter: string, page: number): Observable<any> {
+  getFilterCharacters(filter: string): Observable<any> {
     const params = new HttpParams()
       .set('nameStartsWith', filter)
-      .set('offset', page)
     return this.http.get<any>(this.URL_API, { params }).pipe(map((data: any) => data.data.results));
   }
 }

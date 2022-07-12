@@ -299,10 +299,23 @@ footer {
     }
 
     .form-control {
-        width: 95%;
+        width: 90%;
     }
 
     .mark {
         margin-bottom: 12px;
+    }
+    .ngx-pagination a, .ngx-pagination button{
+        padding: 5px 10px !important;
+    }
+    .ngx-pagination .current{
+        padding: 5px 10px !important;
+    }
+    .ngx-pagination a,
+    .ngx-pagination button {
+        margin: 0px 5px;
+    }
+    .ngx-pagination .current{
+        margin: 0px 5px;
     }
 }

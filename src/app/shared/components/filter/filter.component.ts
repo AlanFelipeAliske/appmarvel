@@ -17,6 +17,5 @@ export class FilterComponent implements OnInit {
 
   myFilter() {
     this.onFilter.emit(this.textFilter);
-
   }
 }
