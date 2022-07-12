@@ -1,0 +1,308 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    transition: 0.2s;
+}
+
+body {
+    width: 100%;
+}
+
+:root {
+    --lightgrey: lightgrey;
+    --red: #d42026;
+    --redopacity: #d4202610;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    padding: 20px 20px;
+}
+
+table tr th {
+    text-align: start;
+    color: white;
+    background-color: var(--red);
+    padding: 10px 20px;
+}
+
+table tr td {
+    font-size: 15px;
+}
+
+table tr {
+    border-bottom: 2px solid var(--redopacity);
+}
+
+table tr:hover {
+    background: var(--redopacity);
+}
+
+td img {
+    border-radius: 58px;
+
+}
+
+.card-img,
+.card-mobile {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.card-img div p {
+    margin-left: 25px;
+}
+
+.name-header {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--red);
+}
+
+.name-header h1 {
+    margin-bottom: 0px;
+}
+
+.border {
+    width: 25%;
+    border-left: solid 10px white;
+    border-right: solid 10px white;
+}
+
+.character {
+    width: 25%;
+}
+
+.nav-filter {
+    margin-bottom: 34px;
+}
+
+.mark {
+    height: 5px;
+    width: 54px;
+    background-color: var(--red);
+    margin-bottom: 34px;
+}
+
+.form-label {
+    color: var(--red);
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #a5a5a5;
+    width: 400px;
+    height: 31px;
+    font-size: 16px;
+}
+
+.pagination {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background: var(--red);
+    height: 12px;
+    width: 100%;
+}
+
+.character-mobile {
+    display: none;
+}
+
+.card-mobile {
+    display: none;
+}
+
+.ngx-pagination {
+    margin-top: 50px;
+    margin-bottom: 50px !important;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.ngx-pagination::before,
+.ngx-pagination::after {
+    content: "" !important;
+    display: table !important;
+}
+
+.ngx-pagination::after {
+    clear: both !important;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    display: block !important;
+    color: var(--red) !important;
+    border: 1px solid var(--red) !important;
+    padding: 10px 15px !important;
+    border-radius: 50px !important;
+    margin: 0px 10px;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: var(--red) !important;
+    color: white !important;
+}
+
+.ngx-pagination .current {
+    padding: 10px 15px !important;
+    background: var(--red) !important;
+    color: #fefefe !important;
+    cursor: default !important;
+    border: 1px solid var(--red) !important;
+    border-radius: 50px !important;
+    margin: 0px 10px;
+}
+
+.ngx-pagination .disabled {
+    color: var(--red) !important;
+    cursor: default !important;
+}
+
+.ngx-pagination .disabled:hover {
+    background: transparent;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    cursor: pointer !important;
+}
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
+    font-family: FontAwesome;
+    content: "" !important;
+    display: inline-block !important;
+    margin-right: 0rem !important;
+}
+
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+    font-family: FontAwesome !important;
+    content: "" !important;
+    display: inline-block !important;
+    margin-left: 0rem !important;
+}
+
+.ngx-pagination .show-for-sr {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+}
+
+.ngx-pagination .small-screen {
+    display: none !important;
+}
+
+.pagination-previous a,
+.pagination-next a {
+    border: none !important;
+}
+
+@media screen and (max-width: 1220px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 940px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 840px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 740px;
+    }
+
+    .character-mobile {
+        display: block;
+    }
+
+    .card-mobile {
+        display: flex;
+    }
+
+    .series {
+        display: none;
+    }
+
+    .events {
+        display: none;
+    }
+
+    .character {
+        display: none;
+    }
+
+    .card-img {
+        display: none;
+    }
+
+    .card-mobile img {
+        margin-right: 25px;
+    }
+
+    .name {
+        display: none;
+    }
+
+    td,
+    th {
+        padding: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .name-header {
+        margin: 20px 0px 0px 20px;
+    }
+
+    .nav-filter {
+        width: 94%;
+        margin: 0px 20px 12px 20px;
+    }
+
+    .form-control {
+        width: 95%;
+    }
+
+    .mark {
+        margin-bottom: 12px;
+    }
+}
